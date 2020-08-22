@@ -8,58 +8,60 @@
 <body>
     <h1>In this project I learned how to display images in different projections</h1>
     
-    <h2 style="color:red">Describe in your own words how you displayed the map in different projections using QGIS</h2>
-    <p>You can write a paragraph here</p>
-    
+    <h2 style="color:blue">Describe in your own words how you displayed the map in different projections using QGIS</h2>
+    <p>Using QGIS mapping software, I started with the same basic view of Earth's countries, as well as latitude and longitude lines. I then changed the coordinate reference system for the map, to show different projections.</p>
+    <h2 style="color:blue">Projections pictured below:</u></h2>
+    <h3>EPSG: 3857, 53018, 54034, 54027, 102016, and two additional projections that you choose (54024 and 102038).</h3>
+    <p></p>
     <h2>WGS84 (Simple Mercator) Projection</h2>
-    <h3>Some observations</h3>
+    <h3>This projection looks very familar since we use the Mercator a lot in settings like school. Areas in high latitudes are very distorted; Greenland looks larger than Africa in this image. However, this map would be good for navigation, since the coordinate grid is made up of right angles.</h3>
     <a href=".//maps/SimpleMercator.png">
     <img src=".//maps/SimpleMercator.png" alt="WGS84" width='500px'>
     </a>
     <h2>Aitoff Projection</h2>
-    <h3>Some observations</h3>
+    <h3>This projection looks more accurate in terms of scale than the Mercator. The poles are still stretched, but it is easier to tell the relative sizes of countries. However, this projection curves in a way that makes it hard to easily see locations far to the East or West of the globe.</h3>
     <a href=".//maps/Aitoff.png"> 
     <img src=".//maps/Aitoff.png" alt="Aitoff" width='500px'>
     </a>
     <!-- copy those 5 lines above, change green links and names -->
     <h2>Pseudo Mercator Projection</h2>
-    <h3>Some observations</h3>
+    <h3>This projection looks very similar to the first one, except it is more square. Once again, high and low latitudes are distorted, but it would be good for nativation and studying geography since everything is flat and made of 90 degree angles.</h3>
     <a href=".//maps/3857Pseudomercatorimg.png">
     <img src=".//maps/3857Pseudomercatorimg.png" alt="3857" width='500px'>
     </a>
     <h2>Sphere Winkel Projection</h2>
-    <h3>Some observations</h3>
+    <h3>This projection feels like somewhat of a middle ground between the Mercator and Aitoff; latitude and longitude lines are curved, but there is less distortion around the edges of the map. Because it is less curved, it is easier to identify different locations, and the countries' relative sizes aren't as distorted as in the 
+        Mercator.
+    </h3>
     <a href=".//maps/53018SphereWinkel.png">
     <img src=".//maps/53018SphereWinkel.png" alt="53018" width='500px'>
     </a>
     <h2>World Cylindrical Equal Area Projection</h2>
-    <h3>Some observations</h3>
+    <h3>This projection feels like the opposite of the Mercator, because high and low latitudes are being compressed instead of stretched. Countries near the equator are easily identifiable and not distorted, but this projection loses usefulness as you approach the poles.</h3>
     <a href=".//maps/54034WorldCylindrical.png">
     <img src=".//maps/54034WorldCylindrical.png" alt="54034" width='500px'>
     </a>
     <h2>World Equidistant Conic Projection</h2>
-    <h3>Some observations</h3>
+    <h3>This projection seems useful only if you are using it to study very high latitudes. Because of its top-down view, the Southern hemisphere is greatly distorted, and relative sizes of countries are not represented well.</h3>
     <a href=".//maps/54027WorldEqiConic.png">
     <img src=".//maps/54027WorldEqiConic.png" alt="54027" width='500px'>
     </a>
     <h2>North Pole Azimuthal Equidistant Projection</h2>
-    <h3>Some observations</h3>
+    <h3>This projection is very similar to the previous one, except the edges of the projection actually encircle the whole world. Once again, southern latitudes are greatly distorted, but this would be useful for studying the Arctic. </h3>
     <a href=".//maps/102016NorthPoleAziEqi.png">
     <img src=".//maps/102016NorthPoleAziEqi.png" alt="102016" width='500px'>
     </a>
     <h2>World Bonne Projection</h2>
-    <h3>Some observations</h3>
+    <h3>This projection caught my attention because I hadn't seen one like it before. Because of the distortion, I'm not really sure what the use of this map would be for anyone not in Africa or Europe (or the Arctic Circle, I suppose), but it does look very interesting.</h3>
     <a href=".//maps/54024WorldBonne.png">
     <img src=".//maps/54024WorldBonne.png" alt="54024" width='500px'>
     </a>
     <h2>"The World From Space" Projection</h2>
-    <h3>Some observations</h3>
+    <h3>This projection is interesting because it is the only one I've seen so far that actually looks like a globe. This is only useful for studying one side of the planet, but it does do a good job of showing Earth's curvature in a way that the other projections don't.</h3>
     <a href=".//maps/102038TheWorldFromSpace.png">
     <img src=".//maps/102038TheWorldFromSpace.png" alt="102038" width='500px'>
     </a>
-    <h2 style="color:red">Now, you should <u>add the following projections on your own:</u></h2>
-    <h3>EPSG: 3857, 53018, 54034, 54027, 102016, and two additional projections that you choose.</h3>
-    <p></p>
+
     <h2>Data used for this project</h2>
     <a href="https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_0_countries.zip"> Download Natrual Earth 1:10m Cultural Vector </a>
 </body>
