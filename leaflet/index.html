@@ -23,7 +23,7 @@
     
     <div id="mapid"></div>
     <style>
-        #mapid{ width: 900px; height: 500px; }
+        #mapid{ width: 900px; height: 900px; }
     </style>
     <!-- the stuff above is css -->
 
@@ -37,10 +37,11 @@
 
 
 //MOREHEAD
-        L.geoJSON(morehead).addTo(map) // the thing in () is the variable name from the first line of the file - not the name of the file
+        // L.geoJSON(morehead).addTo(map) // the thing in () is the variable name from the first line of the file - not the name of the file
         // that's the blue pin
 
         L.marker([35.9139158, -79.05042203855663]).addTo(map)
+            // .bindPopup("Morehead Planetarium <br/><img src='https://assets.simpleviewinc.com/simpleview/image/upload/crm/chapelhill/Morehead-Planetarium-Sceince-Center-5ea50ca75056b3a_5ea50d90-5056-b3a8-496aef3392379209.jpg'width='100px'/>")
             .bindPopup("Morehead Planetarium")
             .openPopup();
         // those two indented lines after marker are to label the popup and have it automaticlaly open
@@ -52,6 +53,7 @@
         });
 
         var moreheadPopup = "Morehead Planetarium <br/><img src='https://assets.simpleviewinc.com/simpleview/image/upload/crm/chapelhill/Morehead-Planetarium-Sceince-Center-5ea50ca75056b3a_5ea50d90-5056-b3a8-496aef3392379209.jpg'width='100px'/>";
+        
         L.geoJSON(morehead, { // that's the name of your variable of geojson
         pointToLayer: function (feature, latlng) { // lat and lon from geojson file???
         return L.marker(latlng, {icon: moreheadIcon});}}) // giving it the marker that we designed above 
@@ -60,7 +62,7 @@
 
 
 //GENOME
-        L.geoJSON(genome).addTo(map) // the thing in () is the variable name from the first line of the file - not the name of the file
+        // L.geoJSON(genome).addTo(map) // the thing in () is the variable name from the first line of the file - not the name of the file
         // that's the blue pin
 
         L.marker([35.907529600000004, -79.05081302015648]).addTo(map)
@@ -68,7 +70,7 @@
             .openPopup();
 
         var genomeIcon = L.icon({
-            iconUrl: 'https://www.clipartmax.com/png/middle/43-431007_clip-arts-related-to-science-beaker-clip-art.png',
+            iconUrl: 'https://img.favpng.com/9/18/8/clip-art-laboratory-flasks-beaker-erlenmeyer-flask-test-tubes-png-favpng-xCHBZnNuCTGvjhhBB9V1YjJZK.jpg',
             iconSize: [50, 50],
             popupAnchor: [0,0]
         });
@@ -82,12 +84,15 @@
 
 
 //DAVIS
-        L.geoJSON(davis).addTo(map) // the thing in () is the variable name from the first line of the file - not the name of the file
+        // L.geoJSON(davis).addTo(map) // the thing in () is the variable name from the first line of the file - not the name of the file
         // that's the blue pin
 
         L.marker([35.91095935, -79.04790752552816]).addTo(map)
             .bindPopup("Davis Library")
+            // .bindPopup("Davis Library", "<img src='https://1.bp.blogspot.com/-jTbMtJpJoDo/T66EnKPBIBI/AAAAAAAACQM/iu-YiZGAQfs/s1600/DSC01232.JPG'width='100px'/>")
             .openPopup();
+
+        // L.geoJSON(davis).addTo(map)
 
         var davisIcon = L.icon({
             iconUrl: 'https://www.adazing.com/wp-content/uploads/2019/02/stacked-book-clipart-02-300x300.png',
@@ -95,12 +100,20 @@
             popupAnchor: [0,0]
         });
 
-        var davisPopup = "Davis Library<br/><img src='https://1.bp.blogspot.com/-jTbMtJpJoDo/T66EnKPBIBI/AAAAAAAACQM/iu-YiZGAQfs/s1600/DSC01232.JPG'width='100px'/>";
+        var davisPopup = "Davis Library<br/><img src='https://1.bp.blogspot.com/-jTbMtJpJoDo/T66EnKPBIBI/AAAAAAAACQM/iu-YiZGAQfs/s1600/DSC01232.JPG' width='100px'/>";            
+        
         L.geoJSON(davis, { // that's the name of your variable of geojson
         pointToLayer: function (feature, latlng) { // lat and lon from geojson file???
         return L.marker(latlng, {icon: davisIcon});}}) // giving it the marker that we designed above 
         .bindPopup(davisPopup) // that's the popup variable that you made above this
         .addTo(map); //
+
+        // L.marker([35.91095935, -79.04790752552816], {
+        //     icon: davisIcon,
+        // pointToLayer: function (feature, latlng) {
+        // return L.marker(latlng, {icon: davisIcon});}})
+        // .bindPopup(davisPopup) // that's the popup variable that you made above this
+        // .addTo(map); //
 
 
 // //OLD WELL
