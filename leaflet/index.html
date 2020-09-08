@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my first leaflet map</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+   <!--the two things above are copy pasted from https://leafletjs.com/examples/quick-start/-->
+
+   <script src = "./data/morehead.geojson"></script>
+   <script src = "./data/genome.geojson"></script>
+   <script src = "./data/davis.geojson"></script>
+
+</head>
+<body>
+    
+    <div id="mapid"></div>
+    <style>
+        #mapid{ width: 900px; height: 500px; }
+    </style>
+    <!-- the stuff above is css -->
+
+    <script>
+        var map = L.map('mapid').setView([35.91, -79.05], 16);
+        // setView is where the map is centered - (lat, lon)
+        // the number after [] is the zoom (in this case 17)
+
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {} ).addTo(map)
+        // L.tileLayer thing is the link from the tile site (bookmarked)
+
+
+//MOREHEAD
+        L.geoJSON(morehead).addTo(map) // the thing in () is the variable name from the first line of the file - not the name of the file
+        // that's the blue pin
+
+        L.marker([35.9139158, -79.05042203855663]).addTo(map)
+            .bindPopup("Morehead Planetarium")
+            .openPopup();
+        // those two indented lines after marker are to label the popup and have it automaticlaly open
+        
+        var moreheadIcon = L.icon({
+            iconUrl: 'https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/28575/reflector-telescope-clipart-md.png',
+            iconSize: [50, 50],
+            popupAnchor: [0,0]
+        });
+
+        var moreheadPopup = "Morehead Planetarium <br/><img src='https://assets.simpleviewinc.com/simpleview/image/upload/crm/chapelhill/Morehead-Planetarium-Sceince-Center-5ea50ca75056b3a_5ea50d90-5056-b3a8-496aef3392379209.jpg'width='100px'/>";
+        L.geoJSON(morehead, { // that's the name of your variable of geojson
+        pointToLayer: function (feature, latlng) { // lat and lon from geojson file???
+        return L.marker(latlng, {icon: moreheadIcon});}}) // giving it the marker that we designed above 
+        .bindPopup(moreheadPopup) // that's the popup variable that you made above this
+        .addTo(map); //
+
+
+//GENOME
+        L.geoJSON(genome).addTo(map) // the thing in () is the variable name from the first line of the file - not the name of the file
+        // that's the blue pin
+
+        L.marker([35.907529600000004, -79.05081302015648]).addTo(map)
+            .bindPopup("Genome Sciences Building")
+            .openPopup();
+
+        var genomeIcon = L.icon({
+            iconUrl: 'https://www.clipartmax.com/png/middle/43-431007_clip-arts-related-to-science-beaker-clip-art.png',
+            iconSize: [50, 50],
+            popupAnchor: [0,0]
+        });
+
+        var genomePopup = "Genome Sciences Building<br/><img src='https://e1.nmcdn.io/clancytheys/wp-content/uploads/2018/05/21_Dusk_View.jpg/v:1-width:1200-fit:contain/21_Dusk_View.jpg?signature=a5939bfdd1aeed71c5d3a9821b1163547ca320c09ea5917858b0cb8bdc6e223f'width='100px'/>";
+        L.geoJSON(genome, { // that's the name of your variable of geojson
+        pointToLayer: function (feature, latlng) { // lat and lon from geojson file???
+        return L.marker(latlng, {icon: genomeIcon});}}) // giving it the marker that we designed above 
+        .bindPopup(genomePopup) // that's the popup variable that you made above this
+        .addTo(map); //
+
+
+//DAVIS
+        L.geoJSON(davis).addTo(map) // the thing in () is the variable name from the first line of the file - not the name of the file
+        // that's the blue pin
+
+        L.marker([35.91095935, -79.04790752552816]).addTo(map)
+            .bindPopup("Davis Library")
+            .openPopup();
+
+        var davisIcon = L.icon({
+            iconUrl: 'https://www.adazing.com/wp-content/uploads/2019/02/stacked-book-clipart-02-300x300.png',
+            iconSize: [50, 50],
+            popupAnchor: [0,0]
+        });
+
+        var davisPopup = "Davis Library<br/><img src='https://1.bp.blogspot.com/-jTbMtJpJoDo/T66EnKPBIBI/AAAAAAAACQM/iu-YiZGAQfs/s1600/DSC01232.JPG'width='100px'/>";
+        L.geoJSON(davis, { // that's the name of your variable of geojson
+        pointToLayer: function (feature, latlng) { // lat and lon from geojson file???
+        return L.marker(latlng, {icon: davisIcon});}}) // giving it the marker that we designed above 
+        .bindPopup(davisPopup) // that's the popup variable that you made above this
+        .addTo(map); //
+
+
+// //OLD WELL
+//         L.geoJSON(uncwell).addTo(map) // the thing in () is the variable name from the first line of the file - not the name of the file
+//         // that's the blue pin
+
+//         var uncIcon = L.icon({
+//             iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/fe/2008-07-11_UNC-CH_Old_Well_in_the_sun.jpg',
+//             iconSize: [70, 50],
+//             popupAnchor: [0,0]
+//         });
+
+//         var customPopup = "UNC Well<br/><img src='https://global.unc.edu/files/2020/02/spring_4_09__12_054-768x511.jpg'width='100px'/>";
+//         L.geoJSON(uncwell, { // that's the name of your variable of geojson
+//         pointToLayer: function (feature, latlng) { // lat and lon from geojson file???
+//         return L.marker(latlng, {icon: uncIcon});}}) // giving it the marker that we designed above 
+//         .bindPopup(customPopup) // that's the popup variable that you made above this
+//         .addTo(map); //
+
+    </script>
+    <!--the stuff in script is javascript-->
+    <!--don't forget the .addTo(map) - this adds the new stuff to that variable-->
+
+</body>
+</html>
+
+<!-- morehead: https://assets.simpleviewinc.com/simpleview/image/upload/crm/chapelhill/Morehead-Planetarium-Sceince-Center-5ea50ca75056b3a_5ea50d90-5056-b3a8-496aef3392379209.jpg' -->
