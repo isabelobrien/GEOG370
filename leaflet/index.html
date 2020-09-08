@@ -46,13 +46,15 @@
             .openPopup();
         // those two indented lines after marker are to label the popup and have it automaticlaly open
         
+        // L.geoJSON(morehead).addTo(map)
+
         var moreheadIcon = L.icon({
             iconUrl: 'https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/28575/reflector-telescope-clipart-md.png',
             iconSize: [50, 50],
             popupAnchor: [0,0]
         });
 
-        var moreheadPopup = "Morehead Planetarium <br/><img src='https://assets.simpleviewinc.com/simpleview/image/upload/crm/chapelhill/Morehead-Planetarium-Sceince-Center-5ea50ca75056b3a_5ea50d90-5056-b3a8-496aef3392379209.jpg'width='100px'/>";
+        var moreheadPopup = "Morehead Planetarium <br/><img src='https://assets.simpleviewinc.com/simpleview/image/upload/crm/chapelhill/Morehead-Planetarium-Sceince-Center-5ea50ca75056b3a_5ea50d90-5056-b3a8-496aef3392379209.jpg'width='100px'/>"
         
         L.geoJSON(morehead, { // that's the name of your variable of geojson
         pointToLayer: function (feature, latlng) { // lat and lon from geojson file???
@@ -69,13 +71,15 @@
             .bindPopup("Genome Sciences Building")
             .openPopup();
 
+        // L.geoJSON(genome).addTo(map)
+
         var genomeIcon = L.icon({
             iconUrl: 'https://img.favpng.com/9/18/8/clip-art-laboratory-flasks-beaker-erlenmeyer-flask-test-tubes-png-favpng-xCHBZnNuCTGvjhhBB9V1YjJZK.jpg',
             iconSize: [50, 50],
             popupAnchor: [0,0]
         });
 
-        var genomePopup = "Genome Sciences Building<br/><img src='https://e1.nmcdn.io/clancytheys/wp-content/uploads/2018/05/21_Dusk_View.jpg/v:1-width:1200-fit:contain/21_Dusk_View.jpg?signature=a5939bfdd1aeed71c5d3a9821b1163547ca320c09ea5917858b0cb8bdc6e223f'width='100px'/>";
+        var genomePopup = "Genome Sciences Building<br/><img src='https://e1.nmcdn.io/clancytheys/wp-content/uploads/2018/05/21_Dusk_View.jpg/v:1-width:1200-fit:contain/21_Dusk_View.jpg?signature=a5939bfdd1aeed71c5d3a9821b1163547ca320c09ea5917858b0cb8bdc6e223f'width='100px'/>"
         L.geoJSON(genome, { // that's the name of your variable of geojson
         pointToLayer: function (feature, latlng) { // lat and lon from geojson file???
         return L.marker(latlng, {icon: genomeIcon});}}) // giving it the marker that we designed above 
@@ -100,7 +104,7 @@
             popupAnchor: [0,0]
         });
 
-        var davisPopup = "Davis Library<br/><img src='https://1.bp.blogspot.com/-jTbMtJpJoDo/T66EnKPBIBI/AAAAAAAACQM/iu-YiZGAQfs/s1600/DSC01232.JPG' width='100px'/>";            
+        var davisPopup = "Davis Library<br/><img src='https://1.bp.blogspot.com/-jTbMtJpJoDo/T66EnKPBIBI/AAAAAAAACQM/iu-YiZGAQfs/s1600/DSC01232.JPG' width='100px'/>"            
         
         L.geoJSON(davis, { // that's the name of your variable of geojson
         pointToLayer: function (feature, latlng) { // lat and lon from geojson file???
