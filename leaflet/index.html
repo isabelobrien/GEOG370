@@ -40,10 +40,9 @@
         // L.geoJSON(morehead).addTo(map) // the thing in () is the variable name from the first line of the file - not the name of the file
         // that's the blue pin
 
-        L.marker([35.9139158, -79.05042203855663]).addTo(map)
-            // .bindPopup("Morehead Planetarium <br/><img src='https://assets.simpleviewinc.com/simpleview/image/upload/crm/chapelhill/Morehead-Planetarium-Sceince-Center-5ea50ca75056b3a_5ea50d90-5056-b3a8-496aef3392379209.jpg'width='100px'/>")
-            .bindPopup("Morehead Planetarium")
-            .openPopup();
+        // L.marker([35.9139158, -79.05042203855663]).addTo(map)
+        //     .bindPopup("Morehead Planetarium")
+        //     .openPopup();
         // those two indented lines after marker are to label the popup and have it automaticlaly open
         
         // L.geoJSON(morehead).addTo(map)
@@ -54,7 +53,7 @@
             popupAnchor: [0,0]
         });
 
-        var moreheadPopup = "Morehead Planetarium <br/><img src='https://assets.simpleviewinc.com/simpleview/image/upload/crm/chapelhill/Morehead-Planetarium-Sceince-Center-5ea50ca75056b3a_5ea50d90-5056-b3a8-496aef3392379209.jpg'width='100px'/>"
+        var moreheadPopup = "Morehead Planetarium <br/><img src='https://assets.simpleviewinc.com/simpleview/image/upload/crm/chapelhill/Morehead-Planetarium-Sceince-Center-5ea50ca75056b3a_5ea50d90-5056-b3a8-496aef3392379209.jpg'width='100px'/>";
         
         L.geoJSON(morehead, { // that's the name of your variable of geojson
         pointToLayer: function (feature, latlng) { // lat and lon from geojson file???
@@ -64,12 +63,9 @@
 
 
 //GENOME
-        // L.geoJSON(genome).addTo(map) // the thing in () is the variable name from the first line of the file - not the name of the file
-        // that's the blue pin
-
-        L.marker([35.907529600000004, -79.05081302015648]).addTo(map)
-            .bindPopup("Genome Sciences Building")
-            .openPopup();
+        //  L.marker([35.907529600000004, -79.05081302015648]).addTo(map)
+        //     .bindPopup("Genome Sciences Building")
+        //     .openPopup();
 
         // L.geoJSON(genome).addTo(map)
 
@@ -88,13 +84,9 @@
 
 
 //DAVIS
-        // L.geoJSON(davis).addTo(map) // the thing in () is the variable name from the first line of the file - not the name of the file
-        // that's the blue pin
-
-        L.marker([35.91095935, -79.04790752552816]).addTo(map)
-            .bindPopup("Davis Library")
-            // .bindPopup("Davis Library", "<img src='https://1.bp.blogspot.com/-jTbMtJpJoDo/T66EnKPBIBI/AAAAAAAACQM/iu-YiZGAQfs/s1600/DSC01232.JPG'width='100px'/>")
-            .openPopup();
+    //    L.marker([35.91095935, -79.04790752552816]).addTo(map)
+    //         .bindPopup("Davis Library")
+    //         .openPopup();
 
         // L.geoJSON(davis).addTo(map)
 
@@ -119,23 +111,6 @@
         // .bindPopup(davisPopup) // that's the popup variable that you made above this
         // .addTo(map); //
 
-
-// //OLD WELL
-//         L.geoJSON(uncwell).addTo(map) // the thing in () is the variable name from the first line of the file - not the name of the file
-//         // that's the blue pin
-
-//         var uncIcon = L.icon({
-//             iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/fe/2008-07-11_UNC-CH_Old_Well_in_the_sun.jpg',
-//             iconSize: [70, 50],
-//             popupAnchor: [0,0]
-//         });
-
-//         var customPopup = "UNC Well<br/><img src='https://global.unc.edu/files/2020/02/spring_4_09__12_054-768x511.jpg'width='100px'/>";
-//         L.geoJSON(uncwell, { // that's the name of your variable of geojson
-//         pointToLayer: function (feature, latlng) { // lat and lon from geojson file???
-//         return L.marker(latlng, {icon: uncIcon});}}) // giving it the marker that we designed above 
-//         .bindPopup(customPopup) // that's the popup variable that you made above this
-//         .addTo(map); //
 
     </script>
     <!--the stuff in script is javascript-->
