@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leaflet Preview</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+  <style type="text/css">
+    body {
+       margin: 0;
+       padding: 0;
+    }
+    html, body, #map{
+       width: 100%;
+       height: 100%;
+    }
+  </style>
+
+
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+      var map = L.map('map').setView([38.62482188617644, -90.19139143382306], 14.0);
+
+
+//STADIUM
+      var stadiumIcon = L.icon({
+        iconUrl: 'https://i.pinimg.com/originals/db/aa/aa/dbaaaa1f36d8f4d73b78d0f7783c4283.png',
+        iconSize: [30, 30],
+        popupAnchor: [0,0]
+      });
+
+      var stadiumMarker = L.marker([38.62274658970856, -90.19241094589235], {icon: stadiumIcon})
+        .bindPopup("Busch Stadium<br/><img src='https://www.ballparksofbaseball.com/wp-content/uploads/2016/03/busch17951.jpg'width='100px'/>")
+        .openPopup();
+
+//ARCH
+      var archIcon = L.icon({
+        iconUrl: 'https://img2.pngio.com/youtube-black-png-download-23701856-free-transparent-gateway-stl-arch-png-900_720.jpg',
+        iconSize: [30, 30],
+        popupAnchor: [0,0]
+      });
+
+      var archMarker = L.marker([38.62449005509648, -90.1850187778473], {icon: archIcon})
+        .bindPopup("St. Louis Arch<br/><img src='https://arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/ILT2STMS45BTDBAHGCXUK3C63I.jpg'width='100px'/>")
+        .openPopup();
+
+//UNION STATION
+var unionIcon = L.icon({
+        iconUrl: 'https://library.kissclipart.com/20190222/coq/kissclipart-train-clipart-train-rail-transport-steam-locomotiv-d5b009951f3de5e3.png',
+        iconSize: [30, 30],
+        popupAnchor: [0,0]
+      });
+
+      var unionMarker = L.marker([38.62796847717398, -90.20794630050659], {icon: unionIcon})
+        .bindPopup("Union Station<br/><img src='https://upload.wikimedia.org/wikipedia/commons/e/eb/St._Louis_Union_Station_%2817577826564%29.jpg'width='100px'/>")
+        .openPopup();
+
+
+
+      var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	      maxZoom: 19,
+	      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          }).addTo(map);
+
+      var slPhoto = L.tileLayer('file:////Users/isabelobrien/Documents/GEOG%20370/Github/Hw6/tiles_just_bandw/{z}/{x}/{y}.png', {
+        minZoom: 12,
+        maxZoom: 16,
+        tms: false,
+        attribution: 'USGS'
+      }).addTo(map);
+
+
+      var slTiles = {
+        "Open Street Map": osm,
+        "St. Louis Photo": slPhoto
+      }
+
+      var stadiumVector = {
+        "Busch Stadium": stadiumMarker,
+        "St. Louis Arch": archMarker,
+        "Union Station": unionMarker
+      }
+
+
+      L.control.layers(slTiles, stadiumVector).addTo(map);
+
+//GEOJSON - DIDN'T WORK
+      // var stadiumIcon = L.icon({
+      //   iconUrl: 'https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/28575/reflector-telescope-clipart-md.png',
+      //       iconSize: [50, 50],
+      //       popupAnchor: [0,0]        
+      // })
+
+      // var stadiumPopup = "text here <br/><img src='https://assets.simpleviewinc.com/simpleview/image/upload/crm/chapelhill/Morehead-Planetarium-Sceince-Center-5ea50ca75056b3a_5ea50d90-5056-b3a8-496aef3392379209.jpg'width='100px'/>";
+        
+      // var stadiumStuff = L.geoJSON(stadium, { // that's the name of your variable of geojson
+      //   pointToLayer: function (feature, latlng) { // lat and lon from geojson file???
+      //   return L.marker(latlng, {icon: stadiumIcon});}}) // giving it the marker that we designed above 
+      //   .bindPopup(stadiumPopup); // that's the popup variable that you made above this
+      //   // .addTo(map); //
+
+  </script>
+</body>
+</html>
