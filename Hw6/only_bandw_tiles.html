@@ -71,7 +71,7 @@ var unionIcon = L.icon({
 	      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           }).addTo(map);
 
-      var slPhoto = L.tileLayer('file:////Users/isabelobrien/Documents/GEOG%20370/Github/Hw6/tiles_just_bandw/{z}/{x}/{y}.png', {
+      var slPhoto = L.tileLayer('./tiles_just_bandw/{z}/{x}/{y}.png', {
         minZoom: 12,
         maxZoom: 16,
         tms: false,
