@@ -39,7 +39,7 @@
       });
 
       var stadiumMarker = L.marker([38.62274658970856, -90.19241094589235], {icon: stadiumIcon})
-        .bindPopup("Busch Stadium<br/><img src='https://www.ballparksofbaseball.com/wp-content/uploads/2016/03/busch17951.jpg'width='100px'/>")
+        .bindPopup("Busch Stadium is the home of the St. Louis Cardinals baseball team. This stadium was rebuilt in 2006 to replace the old one - the differences in construction are clearly visible between the two maps.  <br/><img src='https://www.ballparksofbaseball.com/wp-content/uploads/2016/03/busch17951.jpg'width='150px'/>")
         .openPopup();
 
 //ARCH
@@ -50,7 +50,7 @@
       });
 
       var archMarker = L.marker([38.62449005509648, -90.1850187778473], {icon: archIcon})
-        .bindPopup("St. Louis Arch<br/><img src='https://arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/ILT2STMS45BTDBAHGCXUK3C63I.jpg'width='100px'/>")
+        .bindPopup("The Gateway Arch was built in 1965 to commemorate the westward expansion of the US. The grounds of the Arch (and museum underneath) were remodeled in 2018. The arch itself is 630 feet tall, and the view from the top is amazing!<br/><img src='https://arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/ILT2STMS45BTDBAHGCXUK3C63I.jpg'width='150px'/>")
         .openPopup();
 
 //UNION STATION
@@ -61,15 +61,19 @@ var unionIcon = L.icon({
       });
 
       var unionMarker = L.marker([38.62796847717398, -90.20794630050659], {icon: unionIcon})
-        .bindPopup("Union Station<br/><img src='https://upload.wikimedia.org/wikipedia/commons/e/eb/St._Louis_Union_Station_%2817577826564%29.jpg'width='100px'/>")
+        .bindPopup("St. Louis Union Station functioned as a train station until 1978 - the train tracks visible in the 1979 map have since disappeared. It now functions as a beautiful hotel, museum, event space, and (as of 2019) aquarium!<br/><img src='https://upload.wikimedia.org/wikipedia/commons/e/eb/St._Louis_Union_Station_%2817577826564%29.jpg'width='150px'/>")
         .openPopup();
 
 
 
-      var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-	      maxZoom: 19,
-	      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          }).addTo(map);
+      // var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	    //   maxZoom: 19,
+	    //   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      //     }).addTo(map);
+
+      var osm = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+	      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+          }).addTo(map);         
 
       var slPhoto = L.tileLayer('./tiles_just_bandw/{z}/{x}/{y}.png', {
         minZoom: 12,
