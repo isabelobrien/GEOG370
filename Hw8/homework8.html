@@ -3,43 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homework 7</title>
+    <title>Homework 8</title>
 </head>
 <body>
 <h1>Homework 8: Census data ratios and categories </h1>
 <h2>Isabel O'Brien</h2>
 
-<h3>Equal Count </h3>
-<!-- Your map goes here -->
-<a href="ratio_equal_count.png">
-    <img src="ratio_equal_count.png" alt="your map" width='500px'>
-    </a>
+<h3>For this assignment, I was curious to see the percentages of people in 
+    Pennsylvania over the age of 25 for which a high school degree was their 
+    highest degree recieved. The ratio that I made was [(total number of 
+    people in a county whose highest degree was a high school diploma / 
+    total population for that county) * 100]. This is different from the data 
+    I used in homework 7 (that data had counties missing and also did not 
+    translate well to a ratio), so a simple population map is at the bottom 
+    of this page for reference.</h3>
 
+<!-- explain the ratio, the reason for creating it, and pros and cons -->
+
+<br>
 <h3>Equal Interval </h3>
+<h4>Equal Interval is a method of classification in which the range of each category 
+    is the same (in this map, the range of each is 7%). This is best for data that 
+    is very evenly distributed, with no large clumps of data in any one interval. 
+    This map is potentially the most straightforward to understand when first looking 
+    at it, but does not provide as much detail as it could (for example, a majority of 
+    counties on this map fall into the 42-49% category). </h4>
 <!-- Your map goes here -->
 <a href="ratio_equal_interval.png">
     <img src="ratio_equal_interval.png" alt="your map" width='500px'>
     </a>
 
+<br>
+<h3>Equal Count (Quantile)</h3>
+<h4>Equal Count is a method of classification in which each category has a similar number 
+    of data points (in this case, counties). This is similar to Equal Interval, but 
+    accounts for possible clumping of data by evening out the size of the categories. 
+    For example, the category represented by the second-darkest shade of purple that 
+    was so prevalent in the previous map has now been redistributed. Trends are easier 
+    to see at first glance because less of the map is the same color. However, since the 
+    categories do not all have the same range, this map is harder to fully understand 
+    without reading the key. </h4>
+<!-- Your map goes here -->
+<a href="ratio_equal_count.png">
+    <img src="ratio_equal_count.png" alt="your map" width='500px'>
+    </a>
+
+<br>
 <h3>Natural Breaks </h3>
+<h4>Natural Breaks is a method of classification in which clusters of data are taken 
+    into account. The data will be sorted into categories based on patterns in the data, 
+    not based on the range or size of the invervals themselves. Because of this, the 
+    map is fairly accurate when you are glancing at it to see trends, but this mode 
+    could also result in categories with either very large or very small ranges, 
+    depending on the data being used. </h4>
 <!-- Your map goes here -->
 <a href="ratio_natural_breaks.png">
     <img src="ratio_natural_breaks.png" alt="your map" width='500px'>
     </a>
 
+<br><br><br>
 <h3>Total Population </h3>
+<h4>Since I used different data here than I did in Homework 7, here is a population map of Pennsylvania counties for reference. I thought it was interesting how clearly these maps show that less populated counties are generally correlated with lower average levels of education.</h4>
 <!-- Your map goes here -->
 <a href="pa_population.png">
     <img src="pa_population.png" alt="your map" width='500px'>
     </a>
 
 <!-- Link to your shapefile in Github and you CSV -->
-<h2>Data used for this project</h2>
+<!-- <h2>Data used for this project</h2>
     <a href="med_income_data.csv"> CSV dataset </a>
     <p></p>
     <a href="pa_counties_2271.shp"> Link to shapefile </a>
     <p></p>
-    <a href="pa_counties.geojson"> Link to geoJSON </a>
+    <a href="pa_counties.geojson"> Link to geoJSON </a> -->
 
 </body>
 </html>
